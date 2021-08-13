@@ -47,11 +47,13 @@
             }
         }
 
+        var boardSquareSize = (Math.min(width, height) - 10) / this.board.length
+
         if (this.board != null) {
             for (var index1 = 0; index1 < this.board.length; index1++) {
                 for (var index2 = 0; index2 < this.board[index1].length; index2++) {
                     //盤面の状態を描画
-                    ui.register(idCount, 5 + index1 * 35, 5 + index2 * 35, 34, 34);
+                    ui.register(idCount, 5 + index1 * boardSquareSize, 5 + index2 * boardSquareSize, boardSquareSize - 1, boardSquareSize - 1);
                     ui.pushFillRect(idCount, {color: "darkgreen"});
                     if (this.board[index1][index2] == 1) {
                         ui.pushFillOval(idCount, {color: "black", padding: 2});

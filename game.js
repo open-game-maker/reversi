@@ -29,7 +29,7 @@
                 stageSize = rule[0];
             }
         } 
-        if (stageSize <= 0) {
+        if (stageSize <= 2) {
             stageSize = 8;
         }
 
@@ -40,10 +40,12 @@
             }
         }
 
-        state[(stageSize / 2) - 1][(stageSize / 2) - 1] = 1;
-        state[stageSize / 2][(stageSize / 2) - 1] = 2;
-        state[(stageSize / 2) - 1][(stageSize / 2)] = 2;
-        state[(stageSize / 2)][(stageSize / 2)] = 1;
+        var basePosition = Math.floor(stageSize / 2);
+
+        state[basePosition - 1][basePosition - 1] = 1;
+        state[basePosition][basePosition - 1] = 2;
+        state[basePosition - 1][basePosition] = 2;
+        state[basePosition][basePosition] = 1;
 
         //選択の情報をプレイヤーに送信
         var selections = ogm.newArray(2);
