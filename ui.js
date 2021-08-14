@@ -47,9 +47,9 @@
             }
         }
 
-        var boardSquareSize = (Math.min(width, height) - 10) / this.board.length
-
         if (this.board != null) {
+            var boardSquareSize = (Math.min(width, height) - 10) / this.board.length
+
             for (var index1 = 0; index1 < this.board.length; index1++) {
                 for (var index2 = 0; index2 < this.board[index1].length; index2++) {
                     //盤面の状態を描画
